@@ -15,9 +15,10 @@ jobs:
       - name: Perform build
         run: |
           apt update && apt install --no-install-recommends -y jq
-          source-update/merge-rat.sh
+          source source-update/merge-rat.sh
       - uses: stefanzweifel/git-auto-commit-action@v4.11.0
         with:
           commit_message: Update data
           branch: auto-build
-          file_pattern: '*.json'        
+          file_pattern: '*.json'
+          push_options: '--force'
