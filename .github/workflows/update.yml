@@ -20,4 +20,6 @@ jobs:
         with:
           commit_message: Update data
           branch: auto-build
-          file_pattern: '*.json'        
+          file_pattern: '*.json'
+          skip_fetch: true
+          push_options: '--force'
