@@ -19,3 +19,4 @@ jobs:
           skip_fetch: true
           skip_dirty_check: true
           push_options: '--force'
+          commit_options: ' --allow-empty'
