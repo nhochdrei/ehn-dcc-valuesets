@@ -12,13 +12,19 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-python@v2.2.2
+      - name: Make build timestamp
+        id: build-ts
+        run: echo "::set-output name=timestamp::$(date +'%Y%m%d%H%M%s')"
       - name: Perform build
         run: |
           apt update && apt install --no-install-recommends -y jq
           source source-update/merge-rat.sh
+          git branch -D auto-build-${{ steps.build-ts.outputs.timestamp }} || true
+          git branch auto-build-${{ steps.build-ts.outputs.timestamp }}
       - uses: stefanzweifel/git-auto-commit-action@v4.11.0
         with:
           commit_message: Update data
-          branch: auto-build
+          branch: auto-build-${{ steps.build-ts.outputs.timestamp }}
           file_pattern: '*.json'
+          skip_fetch: true
           push_options: '--force'
