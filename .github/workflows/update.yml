@@ -9,8 +9,6 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    container:
-      options: --user 0
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-python@v2.2.2
@@ -19,7 +17,7 @@ jobs:
         run: echo "::set-output name=timestamp::$(date +'%Y%m%d%H%M%s')"
       - name: Perform build
         run: |
-          apt update && apt install --no-install-recommends -y jq
+          sudo apt update && sudo apt install --no-install-recommends -y jq
           source source-update/merge-rat.sh
           git branch -D auto-build-${{ steps.build-ts.outputs.timestamp }} || true
           git branch auto-build-${{ steps.build-ts.outputs.timestamp }}
