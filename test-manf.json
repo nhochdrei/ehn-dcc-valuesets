@@ -1,6 +1,6 @@
 {
   "valueSetId": "covid-19-lab-test-manufacturer-and-name",
-  "valueSetDate": "2021-07-27",
+  "valueSetDate": "2021-08-19",
   "valueSetValues": {
     "308": {
       "display": "PCL Inc, PCL COVID19 Ag Rapid FIA",
@@ -217,7 +217,7 @@
       "lang": "en",
       "active": true,
       "system": "https://covid-19-diagnostics.jrc.ec.europa.eu/devices",
-      "version": "2021-06-18"
+      "version": "2021-08-10"
     },
     "1263": {
       "display": "Humasis, Humasis COVID-19 Ag Test",
@@ -308,7 +308,7 @@
       "lang": "en",
       "active": true,
       "system": "https://covid-19-diagnostics.jrc.ec.europa.eu/devices",
-      "version": "2021-05-10"
+      "version": "2021-07-27"
     },
     "1333": {
       "display": "Joinstar Biomedical Technology Co., Ltd, COVID-19 Rapid Antigen Test (Colloidal Gold)",
@@ -406,7 +406,7 @@
       "lang": "en",
       "active": true,
       "system": "https://covid-19-diagnostics.jrc.ec.europa.eu/devices",
-      "version": "2021-07-13"
+      "version": "2021-08-12"
     },
     "1465": {
       "display": "Triplex International Biosciences Co., Ltd, SARS-CoV-2 Antigen Rapid Test Kit",
@@ -483,7 +483,7 @@
       "lang": "en",
       "active": true,
       "system": "https://covid-19-diagnostics.jrc.ec.europa.eu/devices",
-      "version": "2021-07-07"
+      "version": "2021-08-03"
     },
     "1574": {
       "display": "Shenzhen Zhenrui Biotechnology Co., Ltd, Zhenrui ®COVID-19 Antigen Test Cassette",
@@ -889,7 +889,7 @@
       "lang": "en",
       "active": true,
       "system": "https://covid-19-diagnostics.jrc.ec.europa.eu/devices",
-      "version": "2021-07-07"
+      "version": "2021-08-06"
     },
     "2116": {
       "display": "PerGrande BioTech Development Co., Ltd., SARS-CoV-2 Antigen Detection Kit (Colloidal Gold Immunochromatographic Assay)",
