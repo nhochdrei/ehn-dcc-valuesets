@@ -1,13 +1,14 @@
 # This is a basic workflow to help you get started with Actions
 
-name: CI
+name: Auto-update
 
 on:
-#  push:
-#    branches: [ main ]
+  schedule:
+    - cron: '30 22 * * *'
   workflow_dispatch:
 jobs:
   build:
+    if: ${{ github.ref == 'refs/heads/main' }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -19,12 +20,14 @@ jobs:
         run: |
           sudo apt update && sudo apt install --no-install-recommends -y jq
           source source-update/merge-rat.sh
-          git branch -D auto-build-${{ steps.build-ts.outputs.timestamp }} || true
-          git branch auto-build-${{ steps.build-ts.outputs.timestamp }}
+          git branch -D auto-build || true
+          git branch auto-build
       - uses: stefanzweifel/git-auto-commit-action@v4.11.0
         with:
-          commit_message: Update data
-          branch: auto-build-${{ steps.build-ts.outputs.timestamp }}
+          commit_message: Promote updated data
+          branch: auto-build
           file_pattern: '*.json'
           skip_fetch: true
+          skip_dirty_check: true
           push_options: '--force'
+          commit_options: ' --allow-empty'
