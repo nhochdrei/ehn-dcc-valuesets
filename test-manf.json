@@ -1,6 +1,6 @@
 {
   "valueSetId": "covid-19-lab-test-manufacturer-and-name",
-  "valueSetDate": "2021-08-19",
+  "valueSetDate": "2021-08-25",
   "valueSetValues": {
     "308": {
       "display": "PCL Inc, PCL COVID19 Ag Rapid FIA",
