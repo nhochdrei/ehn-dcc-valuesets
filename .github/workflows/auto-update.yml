@@ -12,6 +12,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - uses: actions/checkout@v2
+        with:
+          ref: auto-build
+          path: current-for-compare
       - uses: actions/setup-python@v2.2.2
       - name: Make build timestamp
         id: build-ts
@@ -20,6 +24,7 @@ jobs:
         run: |
           sudo apt update && sudo apt install --no-install-recommends -y jq
           source source-update/merge-rat.sh
+          git diff --no-index test-manf.json ./current-for-compare/test-manf.json || true
           git branch -D auto-build || true
           git branch auto-build
       - uses: stefanzweifel/git-auto-commit-action@v4.11.0
