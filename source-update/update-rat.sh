@@ -1,5 +1,5 @@
 #!/bin/bash
-curl --silent --show-error https://covid-19-diagnostics.jrc.ec.europa.eu/devices/hsc-common-recognition-rat | jq \
+curl --silent --show-error 'https://covid-19-diagnostics.jrc.ec.europa.eu/devices/export?manufacturer=&text_name=&marking=&rapid_diag=&format=&target_type=&field-1=HSC%20common%20list%20%28RAT%29&value-1=1&search_method=AND' | jq \
 '{
   "valueSetId": "covid-19-lab-test-manufacturer-and-name",
   "valueSetDate": .extracted_on[0:10],
